@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# GCC output in CodeLite
+/*.txt
+
+# Windows desktop.ini file
+**/**/desktop.ini
