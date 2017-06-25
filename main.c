@@ -11,15 +11,12 @@ int main(int argc, char **argv)
 {
 	setlocale (LC_ALL,"Russian");
 
-	int setBit[5]; // Массив машинных слов
-	setBit[0]=0x000A; // Множество A
-	setBit[1]=0x00A0; // Множество B
-	setBit[2]=0x0A00; // Множество C
-	setBit[3]=0xA000; // Множество D
+	unsigned int setBit[5]; // Массив машинных слов
+	setBit[0]=0x00DC; // Множество A
+	setBit[1]=0x000D; // Множество B
+	setBit[2]=0x0140; // Множество C
+	setBit[3]=0x0202; // Множество D
 	setBit[4]=0x0000; // Множество E
-
-	for (int i=0; i<5; ++i)
-		printf ("%i ",setBit[i]);
 
 	return 0;
 }
