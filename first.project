@@ -93,6 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="main.c"/>
+    <File Name="main.cpp"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="bitWord">
+    <File Name="bitWord/bitWordCalculate.cpp"/>
+    <File Name="bitWord/bitWord.h"/>
   </VirtualDirectory>
 </CodeLite_Project>
