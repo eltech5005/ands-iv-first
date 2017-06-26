@@ -5,18 +5,18 @@
 ## Debug
 ProjectName            :=first
 ConfigurationName      :=Debug
-WorkspacePath          :=D:/ANDS-IV
-ProjectPath            :=D:/ANDS-IV/first
+WorkspacePath          :=/home/adanos/Documents/ANDS-IV
+ProjectPath            :=/mnt/data/adanos/Documents/ANDS-IV/first
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=Adanos
-Date                   :=26/06/2017
-CodeLitePath           :="C:/Program Files/CodeLite"
-LinkerName             :=C:/TDM-GCC-32/bin/g++.exe
-SharedObjectLinkerName :=C:/TDM-GCC-32/bin/g++.exe -shared -fPIC
+User                   :=Dr. Adanos Diego Flamel
+Date                   :=26/06/17
+CodeLitePath           :=/home/adanos/.codelite
+LinkerName             :=/usr/bin/g++
+SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
@@ -34,9 +34,7 @@ ArchiveOutputSwitch    :=
 PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="first.txt"
 PCHCompileFlags        :=
-MakeDirCommand         :=makedir
-RcCmpOptions           := 
-RcCompilerName         :=C:/TDM-GCC-32/bin/windres.exe
+MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -49,20 +47,20 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := C:/TDM-GCC-32/bin/ar.exe rcu
-CXX      := C:/TDM-GCC-32/bin/g++.exe
-CC       := C:/TDM-GCC-32/bin/gcc.exe
+AR       := /usr/bin/ar rcu
+CXX      := /usr/bin/g++
+CC       := /usr/bin/gcc
 CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := C:/TDM-GCC-32/bin/as.exe
+AS       := /usr/bin/as
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) 
+CodeLiteDir:=/usr/share/codelite
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) 
 
 
 
@@ -81,11 +79,11 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "./Debug"
+	@test -d ./Debug || $(MakeDirCommand) ./Debug
 
 
 $(IntermediateDirectory)/.d:
-	@$(MakeDirCommand) "./Debug"
+	@test -d ./Debug || $(MakeDirCommand) ./Debug
 
 PreBuild:
 
@@ -94,7 +92,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/ANDS-IV/first/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
@@ -102,12 +100,20 @@ $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix): bitWord/bitWordCalculate.cpp $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/ANDS-IV/first/bitWord/bitWordCalculate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitWord/bitWordCalculate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(DependSuffix): bitWord/bitWordCalculate.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(DependSuffix) -MM bitWord/bitWordCalculate.cpp
 
 $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(PreprocessSuffix): bitWord/bitWordCalculate.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(PreprocessSuffix) bitWord/bitWordCalculate.cpp
+
+$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix): convert/convertWordtoSet.cpp $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/convert/convertWordtoSet.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(DependSuffix): convert/convertWordtoSet.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(DependSuffix) -MM convert/convertWordtoSet.cpp
+
+$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(PreprocessSuffix): convert/convertWordtoSet.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(PreprocessSuffix) convert/convertWordtoSet.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

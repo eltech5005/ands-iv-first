@@ -99,4 +99,8 @@
     <File Name="bitWord/bitWordCalculate.cpp"/>
     <File Name="bitWord/bitWord.h"/>
   </VirtualDirectory>
+  <VirtualDirectory Name="convert">
+    <File Name="convert/convert.h"/>
+    <File Name="convert/convertWordtoSet.cpp"/>
+  </VirtualDirectory>
 </CodeLite_Project>
