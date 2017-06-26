@@ -107,5 +107,7 @@
     <File Name="bitSet/bitSet.h"/>
     <File Name="bitSet/bitSetPrint.cpp"/>
     <File Name="bitSet/bitSetUnion.cpp"/>
+    <File Name="bitSet/bitSetComplement.cpp"/>
+    <File Name="bitSet/bitSetNegation.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

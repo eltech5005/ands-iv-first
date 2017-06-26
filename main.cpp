@@ -38,6 +38,9 @@ int main (int argc, char **argv) {
     
     /* ¬ычисл€ем множество E дл€ машинного слова */
 	bitWord[4]=bitWordCalculate(bitWord[0],bitWord[1],bitWord[2],bitWord[3]);
-    
+    bitSetPrint(bitSet[2]);
+    bitSetNegation(bitSet[2],bitSet[4]);
+    cout << endl;
+    bitSetPrint(bitSet[4]);
 	return 0;
 }

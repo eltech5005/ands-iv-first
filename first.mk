@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix) 
 
 
 
@@ -130,6 +130,22 @@ $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(DependSuffix): bitSet/bitSetUni
 
 $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(PreprocessSuffix): bitSet/bitSetUnion.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(PreprocessSuffix) bitSet/bitSetUnion.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix): bitSet/bitSetComplement.cpp $(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetComplement.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(DependSuffix): bitSet/bitSetComplement.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(DependSuffix) -MM bitSet/bitSetComplement.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(PreprocessSuffix): bitSet/bitSetComplement.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(PreprocessSuffix) bitSet/bitSetComplement.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix): bitSet/bitSetNegation.cpp $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetNegation.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(DependSuffix): bitSet/bitSetNegation.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(DependSuffix) -MM bitSet/bitSetNegation.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(PreprocessSuffix): bitSet/bitSetNegation.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(PreprocessSuffix) bitSet/bitSetNegation.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
