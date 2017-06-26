@@ -1,14 +1,17 @@
-/* -----
+/* -\----
  * Вариант  : 5
  * Универсум: Десятичные цифры
  * Задание  : Множество, содержащее все цифры множества A, за исключением цифр из B и C, а также все цифры из D
  ----- */
 
-#include <stdio.h>
+#include <iostream>
 #include <locale.h>
 
 #include <bitWord/bitWord.h>
+#include <bitSet/bitSet.h>
 #include <convert/convert.h>
+
+using namespace std;
 
 int main (int argc, char **argv) {
 	
@@ -20,7 +23,7 @@ int main (int argc, char **argv) {
 	bitWord[1]=0x000D; // Множество B
 	bitWord[2]=0x0140; // Множество C
 	bitWord[3]=0x0202; // Множество D
-	
+    
     /* Создаём массивы бит */
     bool** bitSet= new bool*[5];
     bitSet[0] = new bool[10]; // Множество А

@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) 
 
 
 
@@ -114,6 +114,22 @@ $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(DependSuffix): convert/co
 
 $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(PreprocessSuffix): convert/convertWordtoSet.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(PreprocessSuffix) convert/convertWordtoSet.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix): bitSet/bitSetPrint.cpp $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetPrint.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(DependSuffix): bitSet/bitSetPrint.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(DependSuffix) -MM bitSet/bitSetPrint.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(PreprocessSuffix): bitSet/bitSetPrint.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(PreprocessSuffix) bitSet/bitSetPrint.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix): bitSet/bitSetUnion.cpp $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetUnion.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(DependSuffix): bitSet/bitSetUnion.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(DependSuffix) -MM bitSet/bitSetUnion.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(PreprocessSuffix): bitSet/bitSetUnion.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(PreprocessSuffix) bitSet/bitSetUnion.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

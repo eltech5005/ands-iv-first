@@ -103,4 +103,9 @@
     <File Name="convert/convert.h"/>
     <File Name="convert/convertWordtoSet.cpp"/>
   </VirtualDirectory>
+  <VirtualDirectory Name="bitSet">
+    <File Name="bitSet/bitSet.h"/>
+    <File Name="bitSet/bitSetPrint.cpp"/>
+    <File Name="bitSet/bitSetUnion.cpp"/>
+  </VirtualDirectory>
 </CodeLite_Project>
