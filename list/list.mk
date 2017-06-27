@@ -62,7 +62,7 @@ AS       := G:/TDM-GCC-64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=G:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/set.cpp$(ObjectSuffix) 
 
 
 
@@ -100,6 +100,14 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+
+$(IntermediateDirectory)/set.cpp$(ObjectSuffix): set.cpp $(IntermediateDirectory)/set.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Dmeatriy/Documents/ands1/list/set.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/set.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/set.cpp$(DependSuffix): set.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/set.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/set.cpp$(DependSuffix) -MM set.cpp
+
+$(IntermediateDirectory)/set.cpp$(PreprocessSuffix): set.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/set.cpp$(PreprocessSuffix) set.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

@@ -94,5 +94,7 @@
   </Settings>
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
+    <File Name="set.h"/>
+    <File Name="set.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
