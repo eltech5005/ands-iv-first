@@ -60,7 +60,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listPush.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listCreateItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertSettoList.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listPush.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listCreateItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertSettoList.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listIsMember.cpp$(ObjectSuffix) \
+	
 
 
 
@@ -162,6 +163,14 @@ $(IntermediateDirectory)/src_convertSettoList.cpp$(DependSuffix): src/convertSet
 
 $(IntermediateDirectory)/src_convertSettoList.cpp$(PreprocessSuffix): src/convertSettoList.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_convertSettoList.cpp$(PreprocessSuffix) src/convertSettoList.cpp
+
+$(IntermediateDirectory)/src_listIsMember.cpp$(ObjectSuffix): src/listIsMember.cpp $(IntermediateDirectory)/src_listIsMember.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/listIsMember.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_listIsMember.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_listIsMember.cpp$(DependSuffix): src/listIsMember.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_listIsMember.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_listIsMember.cpp$(DependSuffix) -MM src/listIsMember.cpp
+
+$(IntermediateDirectory)/src_listIsMember.cpp$(PreprocessSuffix): src/listIsMember.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_listIsMember.cpp$(PreprocessSuffix) src/listIsMember.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

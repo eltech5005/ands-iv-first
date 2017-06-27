@@ -19,6 +19,7 @@
     <File Name="src/listPrint.cpp"/>
     <File Name="src/listCreateItem.cpp"/>
     <File Name="src/convertSettoList.cpp"/>
+    <File Name="src/listIsMember.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
