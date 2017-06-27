@@ -1,10 +1,15 @@
 /* -----
- * Пользовательская библиотека функций, содержащая описание структуры и функций для работы с ней в рамках решения задачи №1.
+ * Пользовательская библиотека функций, содержащая описание структуры данных для организации списка и функции для работы с ним в рамках решения задачи №1.
  ----- */
 
-/* Описание элемента списка */
 typedef struct item {
-    int value;
-    item* next;
+    int value = 0;
+    item* next = nullptr;
 } item;
 
+extern item* convertSettoList (bool* bitSet);
+
+extern item* listCreateItem (int value);
+extern item* listPush (item* head, item* element);
+
+extern void listPrint (item* head);

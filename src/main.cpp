@@ -23,17 +23,17 @@ int main (int argc, char **argv) {
 
     /* Создаём массивы бит */
     bool** bitSet = new bool*[5];
-    bitSet[0] = new bool[10]; // Множество А
-    bitSet[1] = new bool[10]; // Множество B
-    bitSet[2] = new bool[10]; // Множество C
-    bitSet[3] = new bool[10]; // Множество D
 
     /* Создаём списки */
     item** list = new item*[5];
 
     /* Конвертируем битовые слова в массивы бит */
     for (int i=0; i<4; ++i)
-        convertWordtoSet(bitWord[i],bitSet[i]);
+        bitSet[i] = convertWordtoSet(bitWord[i]);
+
+    /* Конвертируем массивы бит в списки */
+    for (int i=0; i<4; ++i)
+        list[i] = convertSettoList(bitSet[i]);
 
     /* Вычисляем множество E для машинного слова */
 	bitWord[4] = bitWordCalculate(bitWord[0],bitWord[1],bitWord[2],bitWord[3]);
