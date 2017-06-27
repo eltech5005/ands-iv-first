@@ -14,3 +14,5 @@ extern item* listPush (item* head, item* element);
 extern void listPrint (item* head);
 
 bool listIsMember (item* list, item* element);
+
+item* listCalculate (item* A, item* B, item* C, item* D);

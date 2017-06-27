@@ -61,7 +61,7 @@ AS       := /usr/bin/as
 ##
 CodeLiteDir:=/usr/share/codelite
 Objects0=$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listPush.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listCreateItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertSettoList.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listIsMember.cpp$(ObjectSuffix) \
-	
+	$(IntermediateDirectory)/src_listCalculate.cpp$(ObjectSuffix) 
 
 
 
@@ -171,6 +171,14 @@ $(IntermediateDirectory)/src_listIsMember.cpp$(DependSuffix): src/listIsMember.c
 
 $(IntermediateDirectory)/src_listIsMember.cpp$(PreprocessSuffix): src/listIsMember.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_listIsMember.cpp$(PreprocessSuffix) src/listIsMember.cpp
+
+$(IntermediateDirectory)/src_listCalculate.cpp$(ObjectSuffix): src/listCalculate.cpp $(IntermediateDirectory)/src_listCalculate.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/listCalculate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_listCalculate.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_listCalculate.cpp$(DependSuffix): src/listCalculate.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_listCalculate.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_listCalculate.cpp$(DependSuffix) -MM src/listCalculate.cpp
+
+$(IntermediateDirectory)/src_listCalculate.cpp$(PreprocessSuffix): src/listCalculate.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_listCalculate.cpp$(PreprocessSuffix) src/listCalculate.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

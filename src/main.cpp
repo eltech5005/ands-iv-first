@@ -40,6 +40,9 @@ int main (int argc, char **argv) {
 
     /* Вычисляем множество E для массива бит */
     bitSet[4] = bitSetCalculate(bitSet[0],bitSet[1],bitSet[2],bitSet[3]);
+    
+    /* Вычисляем множество E для списка */
+    list[4] = listCalculate(list[0],list[1],list[2],list[3]);
 
     return 0;
 

@@ -20,6 +20,7 @@
     <File Name="src/listCreateItem.cpp"/>
     <File Name="src/convertSettoList.cpp"/>
     <File Name="src/listIsMember.cpp"/>
+    <File Name="src/listCalculate.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
