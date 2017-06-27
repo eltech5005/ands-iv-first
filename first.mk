@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) 
 
 
 
@@ -91,69 +91,45 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
+$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix): src/bitSetCalculate.cpp $(IntermediateDirectory)/src_bitSetCalculate.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/bitSetCalculate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_bitSetCalculate.cpp$(DependSuffix): src/bitSetCalculate.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_bitSetCalculate.cpp$(DependSuffix) -MM src/bitSetCalculate.cpp
 
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+$(IntermediateDirectory)/src_bitSetCalculate.cpp$(PreprocessSuffix): src/bitSetCalculate.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_bitSetCalculate.cpp$(PreprocessSuffix) src/bitSetCalculate.cpp
 
-$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix): bitWord/bitWordCalculate.cpp $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitWord/bitWordCalculate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(DependSuffix): bitWord/bitWordCalculate.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(DependSuffix) -MM bitWord/bitWordCalculate.cpp
+$(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix): src/bitSetPrint.cpp $(IntermediateDirectory)/src_bitSetPrint.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/bitSetPrint.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_bitSetPrint.cpp$(DependSuffix): src/bitSetPrint.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_bitSetPrint.cpp$(DependSuffix) -MM src/bitSetPrint.cpp
 
-$(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(PreprocessSuffix): bitWord/bitWordCalculate.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(PreprocessSuffix) bitWord/bitWordCalculate.cpp
+$(IntermediateDirectory)/src_bitSetPrint.cpp$(PreprocessSuffix): src/bitSetPrint.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_bitSetPrint.cpp$(PreprocessSuffix) src/bitSetPrint.cpp
 
-$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix): convert/convertWordtoSet.cpp $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/convert/convertWordtoSet.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(DependSuffix): convert/convertWordtoSet.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(DependSuffix) -MM convert/convertWordtoSet.cpp
+$(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix): src/bitWordCalculate.cpp $(IntermediateDirectory)/src_bitWordCalculate.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/bitWordCalculate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_bitWordCalculate.cpp$(DependSuffix): src/bitWordCalculate.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_bitWordCalculate.cpp$(DependSuffix) -MM src/bitWordCalculate.cpp
 
-$(IntermediateDirectory)/convert_convertWordtoSet.cpp$(PreprocessSuffix): convert/convertWordtoSet.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(PreprocessSuffix) convert/convertWordtoSet.cpp
+$(IntermediateDirectory)/src_bitWordCalculate.cpp$(PreprocessSuffix): src/bitWordCalculate.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_bitWordCalculate.cpp$(PreprocessSuffix) src/bitWordCalculate.cpp
 
-$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix): bitSet/bitSetPrint.cpp $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetPrint.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(DependSuffix): bitSet/bitSetPrint.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(DependSuffix) -MM bitSet/bitSetPrint.cpp
+$(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix): src/convertWordtoSet.cpp $(IntermediateDirectory)/src_convertWordtoSet.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/convertWordtoSet.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_convertWordtoSet.cpp$(DependSuffix): src/convertWordtoSet.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_convertWordtoSet.cpp$(DependSuffix) -MM src/convertWordtoSet.cpp
 
-$(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(PreprocessSuffix): bitSet/bitSetPrint.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(PreprocessSuffix) bitSet/bitSetPrint.cpp
+$(IntermediateDirectory)/src_convertWordtoSet.cpp$(PreprocessSuffix): src/convertWordtoSet.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_convertWordtoSet.cpp$(PreprocessSuffix) src/convertWordtoSet.cpp
 
-$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix): bitSet/bitSetUnion.cpp $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetUnion.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(DependSuffix): bitSet/bitSetUnion.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(DependSuffix) -MM bitSet/bitSetUnion.cpp
+$(IntermediateDirectory)/src_main.cpp$(ObjectSuffix): src/main.cpp $(IntermediateDirectory)/src_main.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_main.cpp$(DependSuffix): src/main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_main.cpp$(DependSuffix) -MM src/main.cpp
 
-$(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(PreprocessSuffix): bitSet/bitSetUnion.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(PreprocessSuffix) bitSet/bitSetUnion.cpp
-
-$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix): bitSet/bitSetComplement.cpp $(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetComplement.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(DependSuffix): bitSet/bitSetComplement.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(DependSuffix) -MM bitSet/bitSetComplement.cpp
-
-$(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(PreprocessSuffix): bitSet/bitSetComplement.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(PreprocessSuffix) bitSet/bitSetComplement.cpp
-
-$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix): bitSet/bitSetNegation.cpp $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetNegation.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(DependSuffix): bitSet/bitSetNegation.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(DependSuffix) -MM bitSet/bitSetNegation.cpp
-
-$(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(PreprocessSuffix): bitSet/bitSetNegation.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(PreprocessSuffix) bitSet/bitSetNegation.cpp
-
-$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(ObjectSuffix): bitSet/bitSetCalculate.cpp $(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetCalculate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(DependSuffix): bitSet/bitSetCalculate.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(DependSuffix) -MM bitSet/bitSetCalculate.cpp
-
-$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(PreprocessSuffix): bitSet/bitSetCalculate.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(PreprocessSuffix) bitSet/bitSetCalculate.cpp
+$(IntermediateDirectory)/src_main.cpp$(PreprocessSuffix): src/main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_main.cpp$(PreprocessSuffix) src/main.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

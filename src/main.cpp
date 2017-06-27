@@ -7,9 +7,7 @@
 #include <iostream>
 #include <locale.h>
 
-#include <bitWord/bitWord.h>
-#include <bitSet/bitSet.h>
-#include <convert/convert.h>
+#include <src/first.h>
 
 using namespace std;
 

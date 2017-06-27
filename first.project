@@ -93,22 +93,11 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="main.cpp"/>
-  </VirtualDirectory>
-  <VirtualDirectory Name="bitWord">
-    <File Name="bitWord/bitWordCalculate.cpp"/>
-    <File Name="bitWord/bitWord.h"/>
-  </VirtualDirectory>
-  <VirtualDirectory Name="convert">
-    <File Name="convert/convert.h"/>
-    <File Name="convert/convertWordtoSet.cpp"/>
-  </VirtualDirectory>
-  <VirtualDirectory Name="bitSet">
-    <File Name="bitSet/bitSetPrint.cpp"/>
-    <File Name="bitSet/bitSetUnion.cpp"/>
-    <File Name="bitSet/bitSetComplement.cpp"/>
-    <File Name="bitSet/bitSetNegation.cpp"/>
-    <File Name="bitSet/bitSet.h"/>
-    <File Name="bitSet/bitSetCalculate.cpp"/>
+    <File Name="src/bitSetCalculate.cpp"/>
+    <File Name="src/bitSetPrint.cpp"/>
+    <File Name="src/bitWordCalculate.cpp"/>
+    <File Name="src/convertWordtoSet.cpp"/>
+    <File Name="src/first.h"/>
+    <File Name="src/main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
