@@ -56,3 +56,6 @@ dkms.conf
 
 # Windows desktop.ini file
 **/**/desktop.ini
+
+# Codelite Debug builds folder
+/Debug/
