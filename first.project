@@ -15,6 +15,10 @@
     <File Name="src/first.h"/>
     <File Name="src/main.cpp"/>
     <File Name="src/list.h"/>
+    <File Name="src/listPush.cpp"/>
+    <File Name="src/listPrint.cpp"/>
+    <File Name="src/listCreateItem.cpp"/>
+    <File Name="src/convertSettoList.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

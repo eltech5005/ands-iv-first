@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_bitSetCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listPush.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_listCreateItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_convertSettoList.cpp$(ObjectSuffix) 
 
 
 
@@ -130,6 +130,38 @@ $(IntermediateDirectory)/src_main.cpp$(DependSuffix): src/main.cpp
 
 $(IntermediateDirectory)/src_main.cpp$(PreprocessSuffix): src/main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_main.cpp$(PreprocessSuffix) src/main.cpp
+
+$(IntermediateDirectory)/src_listPush.cpp$(ObjectSuffix): src/listPush.cpp $(IntermediateDirectory)/src_listPush.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/listPush.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_listPush.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_listPush.cpp$(DependSuffix): src/listPush.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_listPush.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_listPush.cpp$(DependSuffix) -MM src/listPush.cpp
+
+$(IntermediateDirectory)/src_listPush.cpp$(PreprocessSuffix): src/listPush.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_listPush.cpp$(PreprocessSuffix) src/listPush.cpp
+
+$(IntermediateDirectory)/src_listPrint.cpp$(ObjectSuffix): src/listPrint.cpp $(IntermediateDirectory)/src_listPrint.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/listPrint.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_listPrint.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_listPrint.cpp$(DependSuffix): src/listPrint.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_listPrint.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_listPrint.cpp$(DependSuffix) -MM src/listPrint.cpp
+
+$(IntermediateDirectory)/src_listPrint.cpp$(PreprocessSuffix): src/listPrint.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_listPrint.cpp$(PreprocessSuffix) src/listPrint.cpp
+
+$(IntermediateDirectory)/src_listCreateItem.cpp$(ObjectSuffix): src/listCreateItem.cpp $(IntermediateDirectory)/src_listCreateItem.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/listCreateItem.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_listCreateItem.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_listCreateItem.cpp$(DependSuffix): src/listCreateItem.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_listCreateItem.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_listCreateItem.cpp$(DependSuffix) -MM src/listCreateItem.cpp
+
+$(IntermediateDirectory)/src_listCreateItem.cpp$(PreprocessSuffix): src/listCreateItem.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_listCreateItem.cpp$(PreprocessSuffix) src/listCreateItem.cpp
+
+$(IntermediateDirectory)/src_convertSettoList.cpp$(ObjectSuffix): src/convertSettoList.cpp $(IntermediateDirectory)/src_convertSettoList.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/src/convertSettoList.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_convertSettoList.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_convertSettoList.cpp$(DependSuffix): src/convertSettoList.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_convertSettoList.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_convertSettoList.cpp$(DependSuffix) -MM src/convertSettoList.cpp
+
+$(IntermediateDirectory)/src_convertSettoList.cpp$(PreprocessSuffix): src/convertSettoList.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_convertSettoList.cpp$(PreprocessSuffix) src/convertSettoList.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
