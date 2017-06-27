@@ -104,10 +104,11 @@
     <File Name="convert/convertWordtoSet.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="bitSet">
-    <File Name="bitSet/bitSet.h"/>
     <File Name="bitSet/bitSetPrint.cpp"/>
     <File Name="bitSet/bitSetUnion.cpp"/>
     <File Name="bitSet/bitSetComplement.cpp"/>
     <File Name="bitSet/bitSetNegation.cpp"/>
+    <File Name="bitSet/bitSet.h"/>
+    <File Name="bitSet/bitSetCalculate.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

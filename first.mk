@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Dr. Adanos Diego Flamel
-Date                   :=26/06/17
+Date                   :=27/06/17
 CodeLitePath           :=/home/adanos/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitWord_bitWordCalculate.cpp$(ObjectSuffix) $(IntermediateDirectory)/convert_convertWordtoSet.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetPrint.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetUnion.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetComplement.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(ObjectSuffix) $(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(ObjectSuffix) 
 
 
 
@@ -146,6 +146,14 @@ $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(DependSuffix): bitSet/bitSet
 
 $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(PreprocessSuffix): bitSet/bitSetNegation.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetNegation.cpp$(PreprocessSuffix) bitSet/bitSetNegation.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(ObjectSuffix): bitSet/bitSetCalculate.cpp $(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/data/adanos/Documents/ANDS-IV/first/bitSet/bitSetCalculate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(DependSuffix): bitSet/bitSetCalculate.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(DependSuffix) -MM bitSet/bitSetCalculate.cpp
+
+$(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(PreprocessSuffix): bitSet/bitSetCalculate.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/bitSet_bitSetCalculate.cpp$(PreprocessSuffix) bitSet/bitSetCalculate.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

@@ -3,5 +3,4 @@
  ----- */
 
 extern void bitSetPrint (bool* bitSet);
-void bitSetUnion (bool* bitSetA, bool* bitSetB, bool* bitSetResult);
-void bitSetNegation (bool* bitSetA, bool* bitSetResult);
+extern void bitSetCalculate (bool* A, bool* B, bool* C, bool* D, bool* E);

@@ -33,14 +33,14 @@ int main (int argc, char **argv) {
     bitSet[4] = new bool[10]; // Множество E
     
     /* Конвертируем битовые слова в массивы бит */
-    for (int i; i<5; ++i)
+    for (int i; i<4; ++i)
         convertWordtoSet(bitWord[i],bitSet[i]);
     
     /* Вычисляем множество E для машинного слова */
 	bitWord[4]=bitWordCalculate(bitWord[0],bitWord[1],bitWord[2],bitWord[3]);
-    bitSetPrint(bitSet[2]);
-    bitSetNegation(bitSet[2],bitSet[4]);
-    cout << endl;
-    bitSetPrint(bitSet[4]);
-	return 0;
+    
+    /* Вычисляем множество E для массива бит */
+    bitSetCalculate(bitSet[0],bitSet[1],bitSet[2],bitSet[3],bitSet[4]);
+	
+    return 0;
 }
