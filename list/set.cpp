@@ -8,7 +8,7 @@ Set* addDataToElement (char el) {
 
 Set* addNewElement (Set* head, Set* el) {
     if (head)
-        el->next=head;
+            el->next=head;
     return el;
 }
 
@@ -66,3 +66,4 @@ bool isMember (Set* head, Set* test) {
     }
     return ismember;
 }
+
