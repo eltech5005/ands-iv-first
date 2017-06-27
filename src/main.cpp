@@ -8,6 +8,7 @@
 #include <locale.h>
 
 #include <src/first.h>
+#include <src/list.h>
 
 using namespace std;
 
@@ -27,6 +28,9 @@ int main (int argc, char **argv) {
     bitSet[2] = new bool[10]; // Множество C
     bitSet[3] = new bool[10]; // Множество D
     bitSet[4] = new bool[10]; // Множество E
+    
+    /* Создаём список */
+    item* list = nullptr;
     
     /* Конвертируем битовые слова в массивы бит */
     for (int i; i<4; ++i)

@@ -14,6 +14,7 @@
     <File Name="src/convertWordtoSet.cpp"/>
     <File Name="src/first.h"/>
     <File Name="src/main.cpp"/>
+    <File Name="src/list.h"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
