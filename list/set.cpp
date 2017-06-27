@@ -21,12 +21,30 @@ Set* convertDataToList (Set* head, char data[], int len) {
     return head;
 }
 
-Set* sumSet (Set* head, Set* incr) {
-    while (head) {
-            head=head->next;
-            incr->next=head;
+Set* calculateSet (Set* A, Set* B, Set* C, Set* D, Set* E) {
+    while (A) {
+        if (isMember(D,A)==false&isMember(E,A)==false) {
+            E=addNewElement(E,addDataToElement(A->el));
+            A=A->next;
+        }
+        else
+            A=A->next;
     }
-    return incr;
+    while (B)
+        if (isMember(D,B)==false&isMember(E,B)==false) {
+            E=addNewElement(E,addDataToElement(B->el));
+            B=B->next;
+        }
+        else
+            B=B->next;
+    while (C)
+        if (isMember(D,C)==false&isMember(E,C)==false) {
+            E=addNewElement(E,addDataToElement(C->el));
+            C=C->next;
+        }
+        else
+            C=C->next;
+    return E;
 }
 
 void printSet (Set* head) {
@@ -36,14 +54,15 @@ void printSet (Set* head) {
     }
 }
 
-/*bool isMember (Set* head, Set* test) {
+bool isMember (Set* head, Set* test) {
     bool ismember=false;
     while (head) {
         if (head->el == test->el) {
             ismember=true;
+            break;
         }
         else
             head=head->next;
     }
     return ismember;
-} */
+}
