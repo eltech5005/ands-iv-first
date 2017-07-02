@@ -50,5 +50,12 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-.codelite
-ands.workspace
+
+# GCC output in CodeLite
+/*.txt
+
+# Windows desktop.ini file
+**/**/desktop.ini
+
+# Codelite Debug builds folder
+/Debug/
