@@ -2,11 +2,12 @@
  * Индивидуальное домашнее задание по предмету Алгоритмы и структуры данных
  * Вариант 12
  * Задание: Вычислить множество, содерджащее буквы, имеющиеся в любом из множеств A, B, C, но отсутствующие в D.
- * Применяемый метод: Односвязный список
+ * Универсум: строчные буквы латинского алфавита (a-z)
  * Выполнил Губенко Д. А.
  */
 
 #include <stdio.h>
+#include <conio.h>
 #include <iostream>
 #include <cstring>
 #include <set.h>
@@ -16,56 +17,56 @@
 using namespace std;
 int main(int argc, char **argv)
 {
-    srand (time(NULL));
+    const int n = 26;
+    srand(time(NULL));
     
-    const int n=23;
-    char A[n];
-    char B[n];
-    char C[n];
-    char D[n];
-    cout << "Добро пожаловать в программу расчета." << endl <<  "Желаете сгенерировать строки автоматически? (1 - да, 0 - нет)";
-    bool choice;
-    cin >> choice;
-    if (choice==1) {
-        const int a=97;
-        for (int i=0; i<n; ++i)
-            A[i]=rand()%n+a;
-        for (int i=0; i<n; ++i)
-            B[i]=rand()%n+a;
-        for (int i=0; i<n; ++i)
-            C[i]=rand()%n+a;
-        for (int i=0; i<n; ++i)
-            D[i]=rand()%n+a;
+    unsigned long bitWord[5];
+    for (int i=0; i<4; ++i)
+        bitWord[i]=rand();
+    
+    bitWord[4]=((bitWord[0] | bitWord[1] | bitWord [2]) & ~bitWord[3]);
+
+    for (int i=0; i<4; i++) {
+        char bitSet[n]=" ";
+        itoa(bitWord[i],bitSet,2);
+        for (int i=n-1; i>=0; --i) {
+            if (bitSet[i])
+                cout << bitSet[i] << " ";
+        }
+        cout << endl;
     }
-    else {
-        cout << endl << "Введите множество А: ";
-        cin >> A;
-        cout << endl << "Введите множество B: ";
-        cin >> B;
-        cout << endl << "Введите множество C: ";
-        cin >> C;
-        cout << endl << "Введите множество D: ";
-        cin >> D;
+
+    
+    bool bitSetA[n];
+    bool bitSetB[n];
+    bool bitSetC[n];
+    bool bitSetD[n];
+    bool bitSetE[n];
+
+    for (int i=0; i<26; ++i) {
+        bitSetA[i] = (bitWord[0] >> i) & 1;
+        bitSetB[i] = (bitWord[1] >> i) & 1;
+        bitSetC[i] = (bitWord[2] >> i) & 1;
+        bitSetD[i] = (bitWord[3] >> i) & 1;
     }
-    cout << endl << "Предлагаемый расчет для случайных множеств:" << endl;
-    cout << "Множество A: " << A << endl;
-    cout << "Множество B: " << B << endl;
-    cout << "Множество C: " << C << endl;
-    cout << "Множество D: " << D << endl;
-    cout << "Согласно задаче предполагается формула E=(A|B|C)&~D" << endl;
+    
+    for (int i=0; i<n; ++i)
+        bitSetE[i]=((bitSetA[i]||bitSetB[i]||bitSetC[i])&&!bitSetD[i]);
+        
     Set *LA=NULL;
     Set *LB=NULL;
     Set *LC=NULL;
     Set *LD=NULL;
     Set *LE=NULL;
-    cout << "Преобразование массивов символов в списки: ";
-    LA=convertDataToList(LA, A, strlen(A));
+    
+    cout << "Преобразование массивов бит в списки: ";
+    LA=convertDataToList(LA, bitSetA, n);
     cout << endl << "Список LA: "; printSet(LA);
-    LB=convertDataToList(LB, B, strlen(B));
+    LB=convertDataToList(LB, bitSetB, n);
     cout << endl << "Список LB: "; printSet(LB);
-    LC=convertDataToList(LC, C, strlen(C));
+    LC=convertDataToList(LC, bitSetC, n);
     cout << endl << "Список LC: "; printSet(LC);
-    LD=convertDataToList(LD, D, strlen(D));
+    LD=convertDataToList(LD, bitSetD, n);
     cout << endl << "Список LD: "; printSet(LD);    
     LE=calculateSet(LA, LB, LC, LD, LE);
     cout << endl << "Список LE: "; printSet(LE);

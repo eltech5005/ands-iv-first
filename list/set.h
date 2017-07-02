@@ -7,7 +7,7 @@ struct Set { char el;
 
 Set* addDataToElement (char el);
 Set* addNewElement (Set* head, Set* el);
-Set* convertDataToList (Set* head, char data[], int len);
+Set* convertDataToList (Set* head, bool data[], int len);
 Set* calculateSet (Set* A, Set* B, Set* C, Set* D, Set* E);
 void printSet (Set* head);
 bool isMember (Set* head, Set* test);
