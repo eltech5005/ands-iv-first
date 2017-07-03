@@ -48,7 +48,7 @@ List* calculateList (List* A, List* B, List* C, List* D, List* E) {
     return E;
 }
 
-void printSet (List* head) {
+void printList (List* head) {
     while (head) {
         std::cout << head->el << " ";
         head = head->next;

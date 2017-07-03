@@ -1,8 +1,8 @@
 #include <bitSet.h>
 
-bool convertBitSet(unsigned long* bitWord, int a, bool* bitSet) {
+bool convertBitSet(unsigned long bitWord, bool* bitSet) {
     for (int i=0; i<n; ++i)
-        bitSet[i] = (bitWord[a] >> i) & 1;
+            bitSet[i] = (bitWord >> i) & (unsigned long) 1;
     return bitSet;
 }
 

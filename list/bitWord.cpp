@@ -2,8 +2,8 @@
 
 unsigned long genBitWords(unsigned long* bitWord) {
     for (int i=0; i<4; ++i)
-        bitWord[i]=(rand() | rand() << 10)%0x3FFFFFFF;
-    return * bitWord;
+        bitWord[i]=(rand() | rand() << 11)%0x3FFFFFFF;
+    return* bitWord;
 }
 
 unsigned long calculateBitWord (unsigned long* bitWord) {
