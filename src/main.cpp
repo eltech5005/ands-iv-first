@@ -84,6 +84,9 @@ int main (int argc, char **argv) {
     cout << "Set calculated with stacks 500000 times in " << runtime_total << " clicks." << endl;
     cout << endl << "E: "; listPrint(list[4]); cout << endl;
 
+    std::cout << "\n Press enter to continue... "; 
+    std::cin.get(); 
+
     return 0;
 
 }
